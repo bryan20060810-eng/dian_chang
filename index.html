@@ -1,0 +1,121 @@
+ <!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>同德藥行 - 系統首頁</title>
+    <style>
+        /* 基礎設定：超大字體與清晰字型 */
+        body {
+            font-family: "Microsoft JhengHei", "PingFang TC", sans-serif;
+            background-color: #F7F7F7; /* 柔和的背景色，不刺眼 */
+            color: #222222; /* 高對比的深黑色文字 */
+            margin: 0;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #CCCCCC;
+        }
+
+        .header h1 {
+            font-size: 42px;
+            margin: 0;
+            color: #333;
+        }
+
+        /* 網格佈局：清楚的三大區塊 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        /* 區塊卡片設計 */
+        .module-card {
+            background-color: #FFFFFF;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            padding: 30px;
+            border-top: 8px solid #999; /* 預設頂部顏色 */
+        }
+
+        /* 利用顏色區分不同系統，幫助長輩視覺記憶 */
+        .card-order { border-top-color: #0056B3; } /* 訂單：藍色 */
+        .card-product { border-top-color: #28A745; } /* 商品：綠色 */
+        .card-storage { border-top-color: #E67E22; } /* 倉儲：橘色 */
+
+        .module-card h2 {
+            font-size: 32px;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+
+        /* 超大型按鈕設計：好點擊、易閱讀 */
+        .action-btn {
+            display: block;
+            width: 100%;
+            padding: 18px 0;
+            margin-bottom: 15px;
+            font-size: 26px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            color: #333333;
+            background-color: #EFEFEF;
+            border: 2px solid #BBBBBB;
+            border-radius: 8px;
+            box-sizing: border-box;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        /* 按鈕互動效果：按下去有回饋感 */
+        .action-btn:hover {
+            background-color: #DDDDDD;
+            border-color: #999999;
+        }
+        
+        .action-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* 特別突顯「新增」按鈕 */
+        .btn-primary-order { background-color: #E3F2FD; border-color: #0056B3; color: #0056B3; }
+        .btn-primary-product { background-color: #E8F5E9; border-color: #28A745; color: #28A745; }
+        
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>同德藥行 銷售與管理系統</h1>
+    </div>
+
+    <div class="container">
+        <div class="module-card card-order">
+            <h2>訂單與銷售</h2>
+            <a href="order_add.php" class="action-btn btn-primary-order">＋ 開立新訂單</a>
+            <a href="order_search.php" class="action-btn">查詢/刪除歷史訂單</a>
+        </div>
+
+        <div class="module-card card-product">
+            <h2>藥材與商品管理</h2>
+            <a href="product_manage.php" class="action-btn btn-primary-product">藥材與商品管理</a>
+            <a href="menu_view.php" class="action-btn" target="_blank">🛒 顧客選單檢視（純瀏覽）</a>
+        </div>
+
+        <div class="module-card card-storage">
+            <h2>存放區域管理</h2>
+            <a href="storage_manage.php" class="action-btn">📍 存放區管理與商品位置</a>
+        </div>
+    </div>
+
+</body>
+</html>
